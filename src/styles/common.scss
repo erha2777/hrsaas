@@ -1,0 +1,15 @@
+.clearfix {
+    &:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: ' ';
+        clear: both;
+        height: 0;
+    }
+}
+
+// text-align
+.tac {
+    text-align: center;
+}
