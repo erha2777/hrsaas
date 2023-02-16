@@ -3,7 +3,7 @@ import { createWebHistory } from 'vue-router'
 
 import Layout from '@/layout/index.vue'
 
-const routes: Array<RouteRecordRaw> = [
+export const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
         component: Layout,
@@ -13,6 +13,7 @@ const routes: Array<RouteRecordRaw> = [
                 path: '/dashboard',
                 name: 'dashboard',
                 component: () => import('@/views/dashboard/index.vue'),
+                meta: { title: '首页', icon: 'dashboard' }
             },
         ],
     },

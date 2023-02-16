@@ -32,6 +32,7 @@ export default defineConfig({
                  * @import"@/assets/scss/globalVariable2.scss";'
                  **/
                 // additionalData: '@import "@/styles/globalVar.scss";',
+                additionalData: '@import "@/styles/variables.scss";',
             },
         },
     },

@@ -5,3 +5,4 @@
 3.normalize.css初始化样式
 4.引入sass
 5.按需导入element-plus
+6.安装vuex
