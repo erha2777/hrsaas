@@ -7,11 +7,7 @@ defineProps({
     item: {
         type: Object,
         required: true,
-    },
-    index: {
-        type: String,
-        required: true,
-    },
+    }
 })
 </script>
 
@@ -23,7 +19,7 @@ defineProps({
             </el-menu-item>
         </template>
     </div> -->
-    <el-menu-item :index="index">
+    <el-menu-item v-if="!item.hidden" :index="item.children[0].path">
         <el-icon><IconMenu /></el-icon>
         <template #title>{{item.children[0].meta.title}}
         </template>

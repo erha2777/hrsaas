@@ -24,7 +24,7 @@ const isCollapse = ref(false)
                 :collapse-transition="false"
                 :collapse="isCollapse"
             >
-            <SidebarItem v-for="(item,index) in routes" :item="item" :index="index+''"></SidebarItem>
+            <SidebarItem v-for="(item,index) in routes" :item="item" ></SidebarItem>
                 
             </el-menu>
         </el-scrollbar>

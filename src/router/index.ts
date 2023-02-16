@@ -3,6 +3,7 @@ import { createWebHistory } from 'vue-router'
 
 import Layout from '@/layout/index.vue'
 
+
 export const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
@@ -16,6 +17,11 @@ export const routes: Array<RouteRecordRaw> = [
                 meta: { title: '首页', icon: 'dashboard' }
             },
         ],
+    },
+    {
+        path: '/404',
+        component: () => import('@/views/404.vue'),
+        hidden:true
     },
 ]
 
