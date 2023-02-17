@@ -16,7 +16,7 @@ const fixedHeader = computed(()=>store.state.settings.fixedHeader)
             <div >
                 <navbar />
                 <!-- 放置tabsview -->
-                <tags-view />
+                <!-- <tags-view /> -->
             </div>
             <app-main />
         </div>

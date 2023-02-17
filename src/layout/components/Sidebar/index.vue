@@ -1,19 +1,18 @@
 <script setup lang="ts" name="Sidebar">
 import { ref } from 'vue'
-import { Document, Menu as IconMenu, Location, Setting } from '@element-plus/icons-vue'
 import Logo from './Logo.vue'
 import SidebarItem from './SidebarItem.vue'
 import variables from '@/styles/variables.module.scss'
-import {routes} from '@/router'
+import { constantRoutes as routes } from '@/router'
 console.log(variables)
-console.log(routes);
+console.log(routes)
 
 const isCollapse = ref(false)
 </script>
 
 <template>
     <div>
-        <logo   />
+        <logo />
         <el-scrollbar wrap-class="scrollbar-wrapper">
             <el-menu
                 :background-color="variables.menuBg"
@@ -24,8 +23,7 @@ const isCollapse = ref(false)
                 :collapse-transition="false"
                 :collapse="isCollapse"
             >
-            <SidebarItem v-for="(item,index) in routes" :item="item" ></SidebarItem>
-                
+                <SidebarItem v-for="(item, index) in routes" :item="item"></SidebarItem>
             </el-menu>
         </el-scrollbar>
     </div>

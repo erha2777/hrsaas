@@ -36,4 +36,13 @@ export default defineConfig({
             },
         },
     },
+    server: {
+        proxy: {
+          "/api": {
+            target: "http://ihrm-java.itheima.net/",
+            changeOrigin: true,
+            // rewrite: (path) => path.replace(/^\/api/, ""),
+          },
+        },
+    }
 })

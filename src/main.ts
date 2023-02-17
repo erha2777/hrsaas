@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router'
 import store from './store'
+import router from './router'
 import 'normalize.css/normalize.css' // 初始化css
 import '@/styles/index.scss'
 
