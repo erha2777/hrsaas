@@ -15,7 +15,8 @@ export const constantRoutes: Array<RouteRecordRaw> = [
     },
 
     {
-        path: '/404',
+        path:'/:catchAll(.*)',
+        // path: '/404',
         component: () => import('@/views/404.vue'),
         hidden: true,
     },
@@ -28,10 +29,10 @@ export const constantRoutes: Array<RouteRecordRaw> = [
                 path: '/dashboard',
                 name: 'dashboard',
                 component: () => import('@/views/dashboard/index.vue'),
-                meta: { title: '首页', icon: 'dashboard' },
+                meta: { title: '首页', icon: 'dashboard',elIcon:'HomeFilled' },
             },
         ],
-    },
+    }
 ]
 
 // 定义一个动态路由变量

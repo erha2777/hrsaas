@@ -5,7 +5,7 @@ import { nextTick, reactive, ref, watch } from 'vue'
 import { useStore } from 'vuex'
 import type { FormInstance } from 'element-plus'
 
-const {dispatch} = useStore()
+const { dispatch } = useStore()
 
 //
 const validateUserMobile = (rule: any, value: any, callback: any) => {
@@ -55,8 +55,8 @@ const showPwd = () => {
     })
 }
 
-const formRef:any = ref<FormInstance>()
-const handleLogin = (formEl: FormInstance ) => {
+const formRef: any = ref<FormInstance>()
+const handleLogin = (formEl: FormInstance) => {
     // 表单的手动校验
     formEl.validate(async (isOk: any) => {
         if (isOk) {
@@ -90,7 +90,8 @@ const handleLogin = (formEl: FormInstance ) => {
 
             <el-form-item prop="mobile">
                 <span class="svg-container">
-                    <svg-icon icon-class="user" />
+                    <!-- <svg-icon icon-class="user" /> -->
+                    <User />
                 </span>
                 <el-input ref="mobile" v-model="loginForm.mobile" placeholder="请输入手机号" name="mobile" type="text" tabindex="1" auto-complete="on" />
             </el-form-item>

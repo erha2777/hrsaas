@@ -3,7 +3,9 @@
 </script>
 
 <template>
-  permission
+  <div>
+    permission
+  </div>
 </template>
 
 <style lang="scss" scoped>

@@ -1,18 +1,56 @@
 <script setup lang="ts" name="Navbar">
 import Hamburger from '@/components/Hamburger/index.vue'
+import router from '@/router'
+import store from '@/store'
+import { computed } from 'vue'
+
+const toggleSideBar = () => {
+    store.dispatch('app/toggleSideBar')
+}
+const sidebar = computed(() => store.getters.sidebar)
+const name = computed(() => store.getters.name)
+const staffPhoto = computed(() => store.getters.staffPhoto)
+console.log(staffPhoto)
+
+const logout = async () => {
+    await store.dispatch('user/logout') // 这里无论写不写 await 登出方法都是同步的
+    router.push('/login') // 跳到登录
+}
+const defaultImg = new URL('@/assets/common/head.jpg', import.meta.url).href
 
 </script>
 
 <template>
     <div class="navbar">
-        <Hamburger :is-active="true" class="hamburger-container" />
+        <Hamburger :is-active="sidebar.opened" class="hamburger-container" @toggleClick="toggleSideBar" />
         <div class="app-breadcrumb">
             xxxxxxxx科技股份有限公司
             <span class="breadBtn">体验版</span>
         </div>
 
         <div class="right-menu">
-            
+
+            <el-dropdown class="avatar-container" trigger="click">
+              
+                <div class="avatar-wrapper">
+                    <img v-imagerror="defaultImg" :src="staffPhoto" class="user-avatar" />
+                    <span class="name">{{ name }}</span>
+                    <el-icon class="el-icon-caret-bottom"><CaretBottom /></el-icon>
+                </div>
+                <template #dropdown class="user-dropdown">
+                    <el-dropdown-menu>
+                        <router-link to="/">
+                            <el-dropdown-item> 首页 </el-dropdown-item>
+                        </router-link>
+                        <a target="_blank" href="https://gitee.com/wangjiawei2777/hrsaas">
+                            <el-dropdown-item>项目地址</el-dropdown-item>
+                        </a>
+                        <el-dropdown-item divided @click="logout">
+                            <span style="display: block;">退出登录</span>
+                        </el-dropdown-item>
+                    </el-dropdown-menu>
+                </template>
+            </el-dropdown>
         </div>
     </div>
 </template>
@@ -63,6 +101,8 @@ import Hamburger from '@/components/Hamburger/index.vue'
         float: right;
         height: 100%;
         line-height: 50px;
+        display: flex;
+        align-items: center;
 
         .name {
             color: #fff;
@@ -111,8 +151,7 @@ import Hamburger from '@/components/Hamburger/index.vue'
                     cursor: pointer;
                     position: absolute;
                     right: -20px;
-                    // top: 25px;
-                    top: 20px;
+                    top: 10px;
                     font-size: 12px;
                     color: #fff;
                 }

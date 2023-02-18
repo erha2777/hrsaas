@@ -1,9 +1,11 @@
 <script setup lang="ts" name="dashboard">
- //
+ //123
 </script>
 
 <template>
-    <h2>dashboard</h2>
+    <div>
+        <h2>dashboard</h2>
+    </div>
 </template>
 
 <style lang="scss" scoped>

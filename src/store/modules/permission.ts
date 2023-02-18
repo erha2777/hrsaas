@@ -13,8 +13,9 @@ const mutations = {
     // 这么写业务不太正确
     // state.routes = [...state.routes, ...newRoutes]
     // 应该是每次更新 都应该在静态路由的基础上进行追加
-    console.log(constantRoutes)
+    
     state.routes = [...constantRoutes, ...newRoutes]
+    
   }
 }
 const actions = {
